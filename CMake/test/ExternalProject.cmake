@@ -1343,7 +1343,7 @@ function(_ep_write_gitclone_script
   endif()
   if(git_shallow)
     if(NOT GIT_VERSION_STRING VERSION_LESS 1.7.10)
-      list(APPEND git_clone_options "--depth 1 --shallow-submodules --single-branch")
+      list(APPEND git_clone_options "--depth 1 --no-single-branch")
     else()
       list(APPEND git_clone_options "--depth 1")
     endif()
